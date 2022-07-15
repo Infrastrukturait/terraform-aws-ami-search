@@ -1,0 +1,20 @@
+{
+  "name": "terraform-aws-ami-search",
+  "repo_url": "https://github.com/Infrastrukturait/terraform-aws-ami-search",
+  "license": "GPLv3",
+  "includes": [
+    "docs/versions-matrix.md",
+  ],
+  "authors": [
+    {
+      "name": "Rafał Masiarek",
+      "email": "rafal@masiarek.pl",
+      "github": "rafalmasiarek",
+      "website": "https://masiarek.pl"
+    }
+  ],
+  "context": [
+    "## About\n",
+    "Terraform module to find the last version of an AWS Ami IDs for working region, using common os name."
+  ],
+}
