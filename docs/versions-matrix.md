@@ -8,4 +8,3 @@
 | debian  | 10      | 136693071363 | `^debian-10-.*`                                              | August, 2022  |
 | debian  | 11      | 136693071363 | `^debian-11-.*`                                              | June, 2026    |
 | amazon  | 2       | 137112412989 | `^amzn2-ami-hvm-.*x86_64-gp2`                                | June, 2024    |
-

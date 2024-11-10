@@ -1,12 +1,10 @@
 variable "region" {
-    type    = string
-}
-
-variable "description" {
-    type    = string
+  type        = string
+  description = "AWS Region."
 }
 
 variable "instance_type" {
-    type    = string
-    default = "t3.small"
+  type        = string
+  description = "Instance type"
+  default     = "t3.small"
 }
