@@ -24,9 +24,9 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_amis_os_map_owners"></a> [amis\_os\_map\_owners](#input\_amis\_os\_map\_owners) | Map of amis owner to filter only official amis | `map(any)` | <pre>{<br>  "amazon": "137112412989",<br>  "debian-10": "136693071363",<br>  "debian-11": "136693071363",<br>  "ubuntu-18.04": "099720109477",<br>  "ubuntu-20.04": "099720109477",<br>  "ubuntu-22.04": "099720109477"<br>}</pre> | no |
-| <a name="input_amis_os_map_regex"></a> [amis\_os\_map\_regex](#input\_amis\_os\_map\_regex) | Map of regex to search amis | `map(any)` | <pre>{<br>  "amazon": "^amzn2-ami-hvm-.*x86_64-gp2",<br>  "debian-10": "^debian-10-.*",<br>  "debian-11": "^debian-11-.*",<br>  "ubuntu-18.04": "^ubuntu/images/hvm-ssd/ubuntu-bionic-18.04-.*-server-.*",<br>  "ubuntu-20.04": "^ubuntu/images/hvm-ssd/ubuntu-focal-20.04-.*-server-.*",<br>  "ubuntu-22.04": "^ubuntu/images/hvm-ssd/ubuntu-jammy-22.04-.*-server-.*"<br>}</pre> | no |
-| <a name="input_os"></a> [os](#input\_os) | The OS reference | `string` | n/a | yes |
+| <a name="input_architecture"></a> [architecture](#input\_architecture) | The architecture of the image. | `string` | `"x86_64"` | no |
+| <a name="input_os"></a> [os](#input\_os) | The OS reference name. To see available values, please check `supported_os` reference. | `string` | n/a | yes |
+| <a name="input_virtualization_type"></a> [virtualization\_type](#input\_virtualization\_type) | Keyword to choose what virtualization mode created instances will use. Available values: `paravirtual, `hvm`.` | `string` | `"hvm"` | no |
 
 ### Outputs
 
@@ -57,7 +57,7 @@ module "app_prod_ec2_label" {
 
 module "ami" {
   source = "../../"
-  os     = "amazon"
+  os     = "amazon2"
 }
 
 resource "aws_instance" "instance" {

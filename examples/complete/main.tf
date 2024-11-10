@@ -16,7 +16,7 @@ module "app_prod_ec2_label" {
 
 module "ami" {
   source = "../../"
-  os     = "amazon"
+  os     = "amazon2"
 }
 
 resource "aws_instance" "instance" {

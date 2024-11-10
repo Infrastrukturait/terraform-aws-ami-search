@@ -1,30 +1,31 @@
 variable "os" {
-  description = "The OS reference"
+  description = "The OS reference name. To see available values, please check `supported_os` reference."
   type        = string
-}
 
-variable "amis_os_map_regex" {
-  description = "Map of regex to search amis"
-  type        = map(any)
-  default = {
-    "ubuntu-18.04" = "^ubuntu/images/hvm-ssd/ubuntu-bionic-18.04-.*-server-.*"
-    "ubuntu-20.04" = "^ubuntu/images/hvm-ssd/ubuntu-focal-20.04-.*-server-.*"
-    "ubuntu-22.04" = "^ubuntu/images/hvm-ssd/ubuntu-jammy-22.04-.*-server-.*"
-    "debian-10"    = "^debian-10-.*"
-    "debian-11"    = "^debian-11-.*"
-    "amazon"       = "^amzn2-ami-hvm-.*x86_64-gp2"
+  validation {
+    condition     = contains(["ubuntu-18.04", "ubuntu-20.04", "ubuntu-22.04", "ubuntu-24.04", "debian-10", "debian-11", "debian-12", "amazon2", "al2023"], var.os)
+    error_message = "Invalid value. Available vaules: `ubuntu-18.04`, `ubuntu-20.04`, `ubuntu-22.04`, `ubuntu-24.04`, `debian-10`, `debian-11`, `debian-12`, `amazon2`, `al2023`."
   }
 }
 
-variable "amis_os_map_owners" {
-  description = "Map of amis owner to filter only official amis"
-  type        = map(any)
-  default = {
-    "ubuntu-18.04" = "099720109477"
-    "ubuntu-20.04" = "099720109477"
-    "ubuntu-22.04" = "099720109477"
-    "debian-10"    = "136693071363"
-    "debian-11"    = "136693071363"
-    "amazon"       = "137112412989"
+variable "virtualization_type" {
+  description = "Keyword to choose what virtualization mode created instances will use. Available values: `paravirtual, `hvm`."
+  type        = string
+  default     = "hvm"
+
+  validation {
+    condition     = contains(["hvm", "paravirtual"], var.virtualization_type)
+    error_message = "Invalid value. Available values: paravirtual or hvm."
+  }
+}
+
+variable "architecture" {
+  description = "The architecture of the image."
+  type        = string
+  default     = "x86_64"
+
+  validation {
+    condition     = contains(["x86_64", "arm64"], var.architecture)
+    error_message = "Invalid value. Available values: x86_64 or arm64."
   }
 }

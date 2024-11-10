@@ -3,9 +3,14 @@ data "aws_ami" "this" {
 
   filter {
     name   = "virtualization-type"
-    values = ["hvm"]
+    values = [var.virtualization_type]
   }
 
-  name_regex = lookup(var.amis_os_map_regex, var.os)
-  owners     = [lookup(var.amis_os_map_owners, var.os)]
+  filter {
+    name   = "architecture"
+    values = [var.architecture]
+  }
+
+  name_regex = lookup(local.amis_map[var.os], "regex")
+  owners     = [lookup(local.amis_map[var.os], "owner")]
 }
