@@ -29,3 +29,9 @@ variable "architecture" {
     error_message = "Invalid value. Available values: x86_64 or arm64."
   }
 }
+
+variable "allow_eof_ami" {
+  description = "Ability to use images that are no longer supported and have reached their end of life date. Default value is `false` and we do not suggest changing it."
+  type        = bool
+  default     = false
+}

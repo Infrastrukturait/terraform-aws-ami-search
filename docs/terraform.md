@@ -24,6 +24,7 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| <a name="input_allow_eof_ami"></a> [allow\_eof\_ami](#input\_allow\_eof\_ami) | Ability to use images that are no longer supported and have reached their end of life date. Default value is `false` and we do not suggest changing it. | `bool` | `false` | no |
 | <a name="input_architecture"></a> [architecture](#input\_architecture) | The architecture of the image. | `string` | `"x86_64"` | no |
 | <a name="input_os"></a> [os](#input\_os) | The OS reference name. To see available values, please check `supported_os` reference. | `string` | n/a | yes |
 | <a name="input_virtualization_type"></a> [virtualization\_type](#input\_virtualization\_type) | Keyword to choose what virtualization mode created instances will use. Available values: `paravirtual, `hvm`.` | `string` | `"hvm"` | no |
