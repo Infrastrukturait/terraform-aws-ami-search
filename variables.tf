@@ -4,7 +4,7 @@ variable "os" {
 
   validation {
     condition     = contains(["ubuntu-18.04", "ubuntu-20.04", "ubuntu-22.04", "ubuntu-24.04", "debian-10", "debian-11", "debian-12", "amazon2", "al2023"], var.os)
-    error_message = "Invalid value. Available vaules: `ubuntu-18.04`, `ubuntu-20.04`, `ubuntu-22.04`, `ubuntu-24.04`, `debian-10`, `debian-11`, `debian-12`, `amazon2`, `al2023`."
+    error_message = "Invalid value. Available vaules: ubuntu-18.04, ubuntu-20.04, ubuntu-22.04, ubuntu-24.04, debian-10, debian-11, debian-12, amazon2, al2023."
   }
 }
 
