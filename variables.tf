@@ -1,5 +1,5 @@
 variable "os" {
-  description = "The OS reference name. To see available values, please check `supported_os` reference."
+  description = "The OS reference name. Available vaules: `ubuntu-18.04`, `ubuntu-20.04`, `ubuntu-22.04`, `ubuntu-24.04`, `debian-10`, `debian-11`, `debian-12`, `amazon2`, `al2023`."
   type        = string
 
   validation {
@@ -9,7 +9,7 @@ variable "os" {
 }
 
 variable "virtualization_type" {
-  description = "Keyword to choose what virtualization mode created instances will use. Available values: `paravirtual, `hvm`."
+  description = "Keyword to choose what virtualization mode created instances will use. Available values: `paravirtual`*, `hvm`."
   type        = string
   default     = "hvm"
 
@@ -20,7 +20,7 @@ variable "virtualization_type" {
 }
 
 variable "architecture" {
-  description = "The architecture of the image."
+  description = "The architecture of the image. Available values: `x86_64`*, `arm64`."
   type        = string
   default     = "x86_64"
 

@@ -3,6 +3,7 @@
   "repo_url": "https://github.com/Infrastrukturait/terraform-aws-ami-search",
   "license": "MIT",
   "includes": [
+    "docs/terraform.md",
     "docs/versions-matrix.md"
   ],
   "authors": [
