@@ -106,7 +106,6 @@ resource "aws_instance" "instance" {
 ```
 
 <!-- END_TF_DOCS -->
-
 ### Supported versions matrix
 
 |    OS Name   | Version | Owner Id     | Regex                                                        | EOL           |
